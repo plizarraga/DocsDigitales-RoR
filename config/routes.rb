@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
+  get 'auth/singin'
+
+  get 'auth/singup'
+
+  get 'auth/logout'
+
   get 'welcome/index'
   
 
