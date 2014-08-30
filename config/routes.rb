@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
-  get "registro" => "users#new", :as => "sign_up"
-  root :to => "users#new"
+  get 'welcome/index'
+  get 'sessions/new'
+
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sing_up" => "users#new", :as => "sign_up"
+  
+  root :to => "welcome#index"
   resources :users
+  resources :sessions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

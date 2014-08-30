@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :contrasena
   validates_presence_of :contrasena, :on => :create
   
-  def self.authenticate(email, contrasena)
+  def self.authenticate(email, password)
     user = find_by_correo_electronico(email)
     if user && user.contrasena_hash == BCrypt::Engine.hash_secret(contrasena, user.contrasena_salt)
       user
