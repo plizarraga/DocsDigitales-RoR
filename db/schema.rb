@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140829003013) do
 
-  create_table "sucursals", force: true do |t|
-    t.string   "nombre"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "nombre"
     t.string   "correo_electronico"

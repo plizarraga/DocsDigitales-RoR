@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require bootstrap_and_overrides
+ *= require bootstrapValidator.min
  *= require_self
  */
  .modal-footer { border-top: 0px; }
