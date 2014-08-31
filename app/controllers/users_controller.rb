@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 	layout 'singin'
 	def new
-		@user = User.new
+		if current_user
+			redirect_to root_url
+		else
+			@user = User.new
+		end
 	end
 
 	def create
@@ -11,7 +15,7 @@ class UsersController < ApplicationController
 		else
 			render "new"
 		end
-	end 
+	end
 
 	private
 	def user_params
