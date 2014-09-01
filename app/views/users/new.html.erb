@@ -7,40 +7,40 @@
 			</div>
 			<div class="modal-body">
 				<%= form_for @user, :class => "form col-md-12 center-block" do |f| %>
-					<% if @user.errors.any? %>
-					<div class="error_messages">
-						<h2>Form is invalid</h2>
-						<ul>
-							<% for message in @user.errors.full_messages %>
-							<li><%= message %></li>
-							<% end %>
-						</ul>
-					</div>
-					<% end %>
-					<div class="form-group">					
-						<%= f.text_field :correo_electronico , class: "form-control input-lg", placeholder: "Correo Electrónico" %>
-					</div>
-					<div class="form-group">
-						<%= f.text_field :nombre, class: "form-control input-lg", placeholder: "Nombre" %>
-					</div>
-					<div class="form-group">	
-						<%= f.text_field :rfc , class: "form-control input-lg", placeholder: "RFC" %>
-					</div>
-					<div class="form-group">
-						<%= f.text_field :empresa , class: "form-control input-lg", placeholder: "Empresa" %>
-					</div>
-					<div class="form-group">
-						<%= f.password_field :contrasena , class: "form-control input-lg", placeholder: "Contraseña" %>
-					</div>
-					<div class="form-group">
-						<%= f.password_field :contrasena_confirmation , class: "form-control input-lg", placeholder: "Confirmar Contraseña" %>
-					</div>				
-					<div class="form-group">						
-						<%= f.submit class: "btn btn-primary btn-block"%>
-					</div>
-					<div class="form-group">						
-						<span class="pull-right"><%= link_to 'Iniciar Sesion', log_in_path %></span>			
-					</div>
+				<% if @user.errors.any? %>
+				<div class="error_messages">
+					<h2>Form is invalid</h2>
+					<ul>
+						<% for message in @user.errors.full_messages %>
+						<li><%= message %></li>
+						<% end %>
+					</ul>
+				</div>
+				<% end %>
+				<div class="form-group">					
+					<%= f.text_field :correo_electronico , class: "form-control input-lg", placeholder: "Correo Electrónico" %>
+				</div>
+				<div class="form-group">
+					<%= f.text_field :nombre, class: "form-control input-lg", placeholder: "Nombre" %>
+				</div>
+				<div class="form-group">	
+					<%= f.text_field :rfc , class: "form-control input-lg", placeholder: "RFC" %>
+				</div>
+				<div class="form-group">
+					<%= f.text_field :empresa , class: "form-control input-lg", placeholder: "Empresa" %>
+				</div>
+				<div class="form-group">
+					<%= f.password_field :contrasena , class: "form-control input-lg", placeholder: "Contraseña" %>
+				</div>
+				<div class="form-group">
+					<%= f.password_field :contrasena_confirmation , class: "form-control input-lg", placeholder: "Confirmar Contraseña" %>
+				</div>				
+				<div class="form-group">						
+					<%= f.submit class: "btn btn-primary btn-block"%>
+				</div>
+				<div class="form-group">						
+					<span class="pull-right"><%= link_to 'Iniciar Sesion', log_in_path %></span>			
+				</div>
 				<% end %>
 			</div>
 			<div class="modal-footer">
@@ -50,8 +50,10 @@
 		</div>
 	</div>
 </div>
-<script>
-  $(document).ready(function() {
-    user_validator();
-  });
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	user_validator();
+});
 </script>

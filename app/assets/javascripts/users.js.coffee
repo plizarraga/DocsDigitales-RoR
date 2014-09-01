@@ -20,7 +20,13 @@
       	    message: "* Correo Electronico requerido."
 
       	  emailAddress:
-      	    message: "* Correo Electronico no valido."	
+      	    message: "* Correo Electronico no valido."
+
+          remote:
+            message: "* El correo electronico ya se encuentra registrado."
+            url: "/findEmail"
+            data:
+              type: "user_correo_electronico"  	
       				
       user_nombre:
         selector: "#user_nombre"
@@ -30,9 +36,9 @@
             message: "* El nombre de Usuario es requerido."
 
           stringLength:
-            min: 5
+            min: 3
             max: 30
-            message: "* El nombre debe contener al menos 5 caracteres y maximo 30."
+            message: "* El nombre debe contener al menos 3 caracteres y maximo 30."
 
       user_rfc:
         selector: "#user_rfc"
@@ -41,12 +47,24 @@
           notEmpty:
             message: "* RFC requerido."
 
+          remote:
+            message: "* El RFC ya se encuentra registrado."
+            url: "/findRFC"
+            data:
+              type: "user_rfc"     
+
       user_empresa:
         selector: "#user_empresa"
         message: "* Empresa no valida."
         validators:
           notEmpty:
             message: "* El nombre de su empresa es requerida"
+
+          remote:
+            message: "* La empresa ya se encuentra registrada."
+            url: "/findEmpresa"
+            data:
+              type: "user_empresa"     
 
       user_contrasena:
       	selector: "#user_contrasena"
@@ -79,18 +97,18 @@
     #e.preventDefault()  if $form.data("remote") and $.rails isnt `undefined`
 
     # Prevent form submission
-    e.preventDefault()
+    # e.preventDefault()
 
-    # Get the form instance
-    $form = $(e.target)
+    # # Get the form instance
+    # $form = $(e.target)
 
-    # Get the BootstrapValidator instance
-    bv = $form.data("bootstrapValidator")
+    # # Get the BootstrapValidator instance
+    # bv = $form.data("bootstrapValidator")
 
-    # Use Ajax to submit form data
-    parametros =  $form.serialize()
-    $.post $form.attr("action"), $form.serialize(), ((result) ->
+    # # Use Ajax to submit form data
+    # parametros =  $form.serialize()
+    # $.post $form.attr("action"), $form.serialize(), ((result) ->
 
-    # ... Process the result ...
-    ), "json"
+    # # ... Process the result ...
+    # ), "json"
 return
