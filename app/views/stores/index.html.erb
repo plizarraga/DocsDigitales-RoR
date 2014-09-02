@@ -1,0 +1,28 @@
+<h1>Sucursales</h1>
+
+<table class="table table-hover table-striped">
+	<thead>
+		<th>Nombre</th>
+		<th>Calle</th>
+		<th>Colonia</th>
+		<th>No. Ext.</th>
+		<th>No. Int.</th>
+		<th>CP</th>
+		<th>Ciudad</th>
+		<th>Pais</th>	
+	</thead>
+	<tbody>
+		<% @sucursales.each do |sucursal| %>
+		<tr>
+			<td><%= sucursal.nombre %></td>
+			<td><%= sucursal.calle %></td>
+			<td><%= sucursal.colonia %></td>
+			<td><%= sucursal.num_ext %></td>
+			<td><%= sucursal.num_int %></td>
+			<td><%= sucursal.cp %></td>
+			<td><%= sucursal.ciudad %></td>
+			<td><%= sucursal.pais %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

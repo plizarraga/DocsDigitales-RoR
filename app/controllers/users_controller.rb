@@ -19,8 +19,8 @@ class UsersController < ApplicationController
 	end
 
 	def UserByEmail	
-		@user = User.find_by_correo_electronico(params[:user_correo_electronico])
-		if @user
+		user = User.find_by_correo_electronico(params[:user_correo_electronico])
+		if user
 			render json: {"valid" => 'false'}
 		else
 			render json: {"valid" => 'true'}
@@ -28,8 +28,8 @@ class UsersController < ApplicationController
 	end
 
 	def UserByRFC	
-		@user = User.find_by_rfc(params[:user_rfc])
-		if @user
+		user = User.find_by_rfc(params[:user_rfc])
+		if user
 			render json: {"valid" => 'false'}
 		else
 			render json: {"valid" => 'true'}
@@ -37,8 +37,8 @@ class UsersController < ApplicationController
 	end
 
 	def UserByEmpresa	
-		@user = User.find_by_empresa(params[:user_empresa])
-		if @user
+		user = User.find_by_empresa(params[:user_empresa])
+		if user
 			render json: {"valid" => 'false'}
 		else
 			render json: {"valid" => 'true'}
