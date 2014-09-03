@@ -1,0 +1,26 @@
+<div class="page-header">
+	<h1>Empleado</h1>
+</div>
+<p>
+  <strong>Nombre:</strong>
+  <%= @empleado.nombre %>
+</p>
+ 
+<p>
+  <strong>RFC:</strong>
+  <%= @empleado.rfc %>
+</p>
+
+<p>
+  <strong>Puesto:</strong>
+  <%= @empleado.puesto %>
+</p>
+
+
+<p>
+  <strong>Sucursal:</strong>
+  <%= @empleado.store.nombre %>
+</p>
+
+<%= link_to 'Regresar', empleados_path %> | 
+<%= link_to 'Editar', edit_employee_path(@empleado) %>

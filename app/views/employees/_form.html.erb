@@ -1,0 +1,49 @@
+<%= form_for @empleado, :html => {:class=>"form-horizontal"} do |f| %>
+<% if @empleado.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@empleado.errors.count, "error") %> prohibited
+		this employee from being saved:</h2>
+		<ul>
+			<% @empleado.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :nombre , class: "form-control", placeholder: "Nombre" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :rfc , class: "form-control", placeholder: "RFC" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :puesto , class: "form-control", placeholder: "Puesto" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.collection_select :store_id, User.find(session[:user_id]).stores, :id, :nombre, {prompt: "-- Seleccionar una Sucursal --"}, {:class => 'form-control'} %>
+		</div>
+	</div>		
+
+	<div class="form-group">	
+		<div class="col-lg-4">
+			<%= f.submit class: "btn btn-primary btn-block"%>
+		</div>
+	</div>
+	<% end %>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		employee_validator();
+	});
+	</script>

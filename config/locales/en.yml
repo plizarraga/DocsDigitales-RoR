@@ -25,4 +25,7 @@ en:
     submit:
       user:
         create: "Crear Usuario"
-        update: "Modificar Usuario"  
+        update: "Modificar Usuario"
+      employee:
+        create: "Crear Empleado"
+        update: "Modificar Empleado"

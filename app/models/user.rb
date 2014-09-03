@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
 
   attr_accessor :contrasena
-  has_many :stores, dependent: :destroy  
+  has_many :stores, dependent: :destroy 
+  has_many :employees, through: :stores
+
   before_save :encrypt_password
  
   validates_presence_of :correo_electronico
