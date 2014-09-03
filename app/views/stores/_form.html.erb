@@ -1,0 +1,91 @@
+<%= form_for @sucursal, :html => {:class=>"form-horizontal"} do |f| %>
+<% if @sucursal.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@sucursal.errors.count, "error") %> prohibited
+		this employee from being saved:</h2>
+		<ul>
+			<% @sucursal.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :nombre , class: "form-control", placeholder: "Nombre de la Sucursal" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :calle , class: "form-control", placeholder: "Calle" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :colonia , class: "form-control", placeholder: "Colonia" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :num_ext , class: "form-control", placeholder: "Num. Exterior" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :num_int , class: "form-control", placeholder: "Num. Interior" %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :cp , class: "form-control", placeholder: "Codigo Postal" %>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :ciudad , class: "form-control", placeholder: "Ciudad" %>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-lg-4">
+			<%= f.text_field :pais , class: "form-control", placeholder: "Pais" %>
+		</div>
+	</div>
+	<div class="page-header">
+		<h1>Registrar Empledos</h1>
+	</div>
+
+	<%= f.fields_for :employees do |builder| %>
+
+	<div class="row top-buffer">
+		<div class="col-md-4">
+			<%= builder.text_field :nombre , class: "form-control", placeholder: "Nombre Empleado" %>
+		</div>
+		<div class="col-md-4"> 
+			<%= builder.text_field :rfc , class: "form-control", placeholder: "RFC" %>
+		</div>
+		<div class="col-md-4">
+			<%= builder.text_field :puesto , class: "form-control", placeholder: "Puesto" %>			
+		</div>
+	</div>
+	<% end %>
+
+	<br>
+	
+	<div class="form-group">	
+		<div class="col-lg-4">
+			<%= f.submit class: "btn btn-primary btn-block"%>
+		</div>
+	</div>
+	<% end %>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		store_validator();
+	});
+	</script>

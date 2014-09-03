@@ -29,3 +29,6 @@ en:
       employee:
         create: "Crear Empleado"
         update: "Modificar Empleado"
+      store:
+        create: "Crear Sucursal"
+        update: "Modificar Sucursal"

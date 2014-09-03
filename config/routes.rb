@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
   resources :stores
   get "sucursales" => "stores#index"
+  get 'sucursal/:id', to: 'stores#show', :as => "sucursal"
+  get "sucursal" => "stores#new", :as => "new_sucursal"
+  get 'sucursal/:id/edit', to: 'stores#edit', :as => "edit_sucursal"
 
   resources :employees
   get "empleados" => "employees#index"

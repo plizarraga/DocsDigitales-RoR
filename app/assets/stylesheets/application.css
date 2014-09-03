@@ -16,3 +16,4 @@
  *= require_self
  */
  .modal-footer { border-top: 0px; }
+ .top-buffer { margin-top:10px; }

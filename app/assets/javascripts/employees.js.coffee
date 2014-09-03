@@ -29,12 +29,6 @@
         validators:
           notEmpty:
             message: "* RFC requerido."
-
-          remote:
-            message: "* El RFC ya se encuentra registrado."
-            url: "/findEmployeeRFC"
-            data:
-              type: "employee_rfc"     
       
       employee_store_id:
         selector: "#employee_store_id"
